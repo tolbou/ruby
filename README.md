@@ -20,7 +20,9 @@ $ cd xxxxx # ←先程クローンしたディレクトリ名を入力
 次に以下のコマンドを実行してコンテナの立ち上げからコンテナ内への移動まで行ってください。
 
 ```bash
-$ docker compose up -d
+$ docker compose up
+
+*docker compose upを実行しているターミナルとは別に新しくターミナルを立ち上げてください。新しいターミナルにて以下のコマンドを実行してください。
 $ docker compose exec ruby bash
 ```
 
