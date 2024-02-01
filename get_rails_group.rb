@@ -31,5 +31,20 @@ curriculum_data = [
   ["Admin課題", 4]
 ]
 
-# 動作確認サンプル
-puts curriculum_data
+
+curriculum_hash_array = curriculum_data.map do |item|
+  { hours: item[1], content: item[0]}
+end
+
+curriculum_group = curriculum_hash_array.group_by { |hash| hash[:hours] }
+curriculum_syukei = curriculum_group.map do |hour,items|
+  { 
+    hours: hour,
+    count: items.size,
+    content: items.map { |item| item[:content] }
+  }
+end
+curriculum_result = curriculum_syukei.sort_by { |h| -h[:hours] }
+
+  # 動作確認サンプル
+puts curriculum_result
